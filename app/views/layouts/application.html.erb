@@ -9,7 +9,17 @@
         <div class="wrapper">
             <img src="/gfx/logo.png">
             <span>Twitter Clone</span>
+            <% if current_user %>
+    			<%= link_to "Log Out", sessions_destroy_path %>
+			<% else %>
+    			<%= form_tag sessions_create_path do %>
+	       			<%= text_field_tag :username, nil, placeholder: "username" %>
+	        		<%= password_field_tag :password, nil,  placeholder: "password" %>
+	        		<%= submit_tag "Log In" %>
+    			<% end %>
+    		<% end %>
         </div>
+        
     </header>
     <div id="content">
         <div class="wrapper">
