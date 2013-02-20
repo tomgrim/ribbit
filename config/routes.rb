@@ -10,6 +10,8 @@ RibbitApp::Application.routes.draw do
 
   root to: 'users#new'
 
+  get 'buddies', to: 'users#buddies', as: 'buddies'
+
   get 'sessions/new'
   post 'sessions/create'
   get 'sessions/destroy'
