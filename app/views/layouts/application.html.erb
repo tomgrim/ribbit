@@ -7,17 +7,19 @@
 <body>
     <header>
         <div class="wrapper">
-            <img src="/gfx/logo.png">
+            <a href='<%= root_url %>'><img src="/gfx/logo.png"></a>
             <span>Twitter Clone</span>
-            <%= link_to "Public Ribbits", ribbits_path %>
-            -
-            <%= link_to "Public Profiles", users_path %>
-            -
-            <%= link_to "Buddies' Ribbits", buddies_path %>
-            -
-			<%= link_to "My Profile", current_user %>
+            
             <% if current_user %>
-    			<%= link_to "Log Out", sessions_destroy_path %>
+                <%= link_to "Public Ribbits", ribbits_path %>
+                -
+                <%= link_to "Public Profiles", users_path %>
+                -
+                <%= link_to "Buddies' Ribbits", buddies_path %>
+                -
+                <%= link_to "My Profile", current_user %>
+                -
+        		<%= link_to "Log Out", sessions_destroy_path %>
 			<% else %>
     			<%= form_tag sessions_create_path do %>
 	       			<%= text_field_tag :username, nil, placeholder: "username" %>
